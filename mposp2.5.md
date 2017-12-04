@@ -2205,5 +2205,41 @@ Content-Length: 100
 ```
 ##### [返回目录↑](#content-title)
 
+<a id="checkTerminalBdingStatus"></a>
+### 检测机具是否解绑  /transList
+#### 1\. 检测机具是否解绑
+请求：  
+```
+POST /transList HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
 
 
+"appVersion": "android.ZFT.1.2.143",
+"mobileNo": 13055555554,--用户名
+
+
+```
+响应：  
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
+    "op_type": "1",//1、已绑定 2、已解除 0、系统异常
+    "versionStatus": false//true 需要升级客户端 false无需升级
+
+}
+```
+##### [返回目录↑](#content-title)

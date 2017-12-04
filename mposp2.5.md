@@ -2245,7 +2245,7 @@ Content-Length: 100
 ```
 ##### [返回目录↑](#content-title)
 <a id="swiperTerminal"></a>
-### 解绑机具后 重新绑定机具  /swiperChange
+### 解绑机具后重新绑定机具  /swiperTerminal
 #### 1\. 解绑机具后 重新绑定机具
 请求：  
 ```

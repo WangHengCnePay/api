@@ -54,6 +54,7 @@ HTTP/1.1 403 Forbidden
 ## 功能路径列表
 | 资源名称     | 路径                                     | Content-Type         | 请求方式     | 维护人     | 是否需要登录|
 |-------------|-----------------------------------------|----------------------|---------------|---------------|---------------|
+| 机具解绑后重新激活机具 | [/swiperTerminal](#swiperTerminal)                      | urlencoded           | POST   | 王恒     | 是   |
 | 检测机具是否解绑| [/checkTerminalBdingStatus](#checkTerminalBdingStatus)       | urlencoded           | GET   | 王恒     | 否   |
 | 获取验证码| [/sendMobileMessage](#sendMobileMessage)                      | urlencoded           | POST   | 张树彬     | 否   |
 | 获取验证码| [/sendCustomerMessage](#sendCustomerMessage)		       | urlencoded	      | POST   | 张攀攀	 | 否   |
@@ -2242,4 +2243,42 @@ Content-Length: 100
 
 }
 ```
+##### [返回目录↑](#content-title)
+<a id="swiperTerminal"></a>
+### 解绑机具后 重新绑定机具  /swiperChange
+#### 1\. 解绑机具后 重新绑定机具
+请求：  
+```
+POST /swiperTerminal HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+appVersion: "ios.未知.1.1.813"
+reqNo:"1234"
+ksnNo:"XXXXXX"
+model:"landim35"
+macAddress:"XXXXXXX"
+```
+
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime":"20151130125253",
+    "isSuccess":true,
+    "respCode":"SUCCESS",
+    "respMsg":"查询成功"
+}
+```
+
 ##### [返回目录↑](#content-title)

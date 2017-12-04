@@ -2211,15 +2211,14 @@ Content-Length: 100
 #### 1\. 检测机具是否解绑
 请求：  
 ```
-POST /transList HTTP/1.1
+GET /checkTerminalBdingStatus HTTP/1.1
 Host: mposp.21er.tk
 Date: Thu, 03 Dec 2015 10:22:53
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
 Content-Length: 30
 
 
-"appVersion": "android.ZFT.1.2.143",
-"mobileNo": 13055555554,--用户名
+"appVersion": "android.ZFT.1.4.1",
 
 
 ```

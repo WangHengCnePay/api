@@ -97,6 +97,7 @@ HTTP/1.1 403 Forbidden
 | 查询完美账单MCC列表| [/perfectBillMCC](#perfectBillMCC)              | urlencoded           | GET |李飞| 是   |
 | 校验是否开通机具| [/checkIsDredgeMachine](#checkIsDredgeMachine)              | urlencoded           | GET |张树彬| 是   |
 | 获取系统户列表| [/getAcqMerchantList](#getAcqMerchantList)              | urlencoded           | GET |张树彬| 是   |
+| 获取银联二维码系统户列表| [/getUnionAcqMerchantList](#getUnionAcqMerchantList)              | urlencoded           | GET |王恒| 是   |
 ----------------------------------------------------------------------------------
 <a id="sendMobileMessage"></a>
 ### 获取验证码  /sendMobileMessage
@@ -1880,6 +1881,56 @@ Content-Length: 30
 "pageSize" : 10, //每页展示的条数
 "pageNo" : 1, //页数
 "isDnTrans" : false//是否D0交易
+
+```
+响应： 
+
+```
+HTTP/1.1 200 OK
+Server: Nginx
+Date: Thu, 09 Apr 2015 11:36:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Cache-Control: no-cache
+Content-Length: 100
+
+{
+    "respTime": "20151228143800",
+    "isSuccess": true,
+    "respCode": "SUCCESS",
+    "respMsg": "成功",
+    "totalRecords": 3,//总条数
+    "bottomPageNo": 2,//总页数
+    "list":[
+    	[
+		"acqMerchantId":123,//系统户ID
+		"acqMerchantNo":"860000000000001",//系统户号
+		"acqMerchantName":"小张杂货铺"//系统户名称	
+	],
+	...
+    ]
+}
+```
+##### [返回目录↑](#content-title)
+
+
+<a id="getUnionAcqMerchantList"></a>
+### 获取银联二维码系统户列表  /getUnionAcqMerchantList
+#### 1\. 获取银联二维码系统户列表
+请求：  
+```
+GET /getAcqMerchantList HTTP/1.1
+Host: mposp.21er.tk
+Date: Thu, 03 Dec 2015 10:22:53
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Content-Length: 30
+
+"mccId" : 111,//商户大类对应的MCCID
+"amount" : 10000, //交易金额，单位：分
+"pageSize" : 10, //每页展示的条数
+"pageNo" : 1, //页数
+"isDnTrans" : false//是否D0交易
+"position" : 12,134.21212//定位信息
 
 ```
 响应： 
